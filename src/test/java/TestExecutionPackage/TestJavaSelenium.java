@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.List;
 
 public class TestJavaSelenium {
     @Test
@@ -104,5 +105,24 @@ public class TestJavaSelenium {
             driver.quit();
         }
     }
-}
+    @Test
+    public void AutoSuggestiveDropdowns()
+    {
+       WebDriver driver = new ChromeDriver();
+       driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+       driver.manage().window().maximize();
+       driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+       List<WebElement> options = driver.findElements(By.cssSelector("li[class='ui-menu-item']"));
+       for(WebElement option : options)
+       {
+           if(option.getText().equalsIgnoreCase("India"))
+           {
+               option.click();
+               break;
+           }
+       }
+
+        }
+    }
+
 
