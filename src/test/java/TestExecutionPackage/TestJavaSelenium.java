@@ -123,6 +123,24 @@ public class TestJavaSelenium {
        }
 
         }
+    
+    @Test
+    public void TestCheckBoxes()
+    {
+    	WebDriver driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().window().maximize();
+        driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+        List<WebElement> options = driver.findElements(By.cssSelector("div#discount-checkbox"));
+        for(WebElement option : options)
+        {
+        	if(option.isSelected())
+        	{
+        		System.out.println(option.getText() + "checkbox");
+        		// just to check push to git hub
+        	}
+        }
+    }
     }
 
 
