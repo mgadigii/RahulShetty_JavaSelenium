@@ -131,7 +131,7 @@ public class TestJavaSelenium {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().window().maximize();
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
-        List<WebElement> options = driver.findElements(By.cssSelector("div#discount-checkbox"));
+        List<WebElement> options = driver.findElements(By.cssSelector("div[id='discount-checkbox'] div label"));
         for(WebElement option : options)
         {
         	if(option.isSelected())
